@@ -16,7 +16,6 @@ class Args:
     discrete_flow_type = 'masking'
     # msa flow
     flow_msa = False
-    flow_ec = False
     class r3:
         min_b = 0.01
         min_sigma = 0.01
@@ -92,7 +91,6 @@ class Args:
         discrete_temp = 5.
         aa_noise = 40.0
         msa_noise = 40.0
-        ec_noise = 40.0
         rot_sample_schedule = 'exp'
         trans_sample_schedule = 'linear'
         n_sample = 100
