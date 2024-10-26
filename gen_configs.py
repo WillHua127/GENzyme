@@ -19,7 +19,7 @@ class Args:
 
     # alphafold loss
     use_aa = False
-    use_fape = True
+    use_fape = False
     use_plddt = False
     use_pae = False
     use_tm = False
@@ -52,6 +52,17 @@ class Args:
     bb_ligand_rbf_d_min = 0.5
     bb_ligand_rbf_d_max = 6.
 
+
+    #4 MSA arguments
+    class msa:
+        num_msa = 1
+        num_msa_vocab = 64 #fixed
+        num_msa_token = 500
+        msa_layers = 2
+        msa_heads = 4
+        msa_hidden_size = 128
+        msa_embed_size = 32 #node_embed_size
+
         
     class mpnn:
         num_edge_type = 4
@@ -60,18 +71,20 @@ class Args:
         mpnn_layers = 3
         mpnn_node_embed_size = 256 #node_embed_size
         mpnn_edge_embed_size = 128 #edge_embed_size
+        
 
     class embed:
         c_s = 256 #node_embed_size
         c_pos_emb = 128
         c_timestep_emb = 128
         timestep_int = 1000
-    
         c_z = 128 #edge_embed_size
-        embed_self_conditioning = True
+        embed_self_conditioning = False
         relpos_k = 64
         feat_dim = 64
         num_bins = 22
+        num_lddt_bins = 50
+        num_tm_bins = 64
         
     class ipa:
         c_s = 256 #node_embed_size
