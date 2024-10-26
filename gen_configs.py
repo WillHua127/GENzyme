@@ -1,6 +1,5 @@
 class Args:
-    metadata_path = 'data/metadata_eval.csv'
-    ckpt_path = 'checkpoint/2024-09-12-08-49-10/epoch172'
+    ckpt_path = 'checkpoint/gen_model.ckpt'
     
     #1 data arguments
     min_t = 0.0
@@ -16,10 +15,8 @@ class Args:
     flow_aa = True
     discrete_flow_type = 'masking'
     # msa flow
-    flow_msa = True
-
-    # ec flow
-    flow_ec = True
+    flow_msa = False
+    flow_ec = False
     class r3:
         min_b = 0.01
         min_sigma = 0.01
@@ -48,20 +45,6 @@ class Args:
     bb_ligand_rbf_d_min = 0.5
     bb_ligand_rbf_d_max = 6.
 
-    #4 MSA arguments
-    class msa:
-        num_msa = 1
-        num_msa_vocab = 64 #fixed
-        num_msa_token = 500
-        msa_layers = 2
-        msa_heads = 4
-        msa_hidden_size = 128
-        msa_embed_size = 32 #node_embed_size
-
-    class ec:
-        num_ec_class = 6 #fixed
-        ec_heads = 4
-        ec_embed_size = 32 #node_embed_size
         
     class mpnn:
         num_edge_type = 4

@@ -10,8 +10,8 @@ import torch
 import numpy as np
 import pandas as pd
 
-from eval_configs import *
-from inference import *
+from gen_configs import *
+from gen_inference import *
 
 from ofold.np import residue_constants
 
