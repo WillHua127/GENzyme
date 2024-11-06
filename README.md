@@ -1,1 +1,1 @@
-# AlphaEnzyme
+# GENzyme
