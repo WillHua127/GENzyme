@@ -36,3 +36,5 @@ For binding module, we use UniMol Docking v2, you need to install [UniCore](http
 
 ## Model Training
 
+## License
+No Commercial use of either the model nor generated data, details to be found in license.md.
