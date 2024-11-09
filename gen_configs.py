@@ -1,74 +1,51 @@
 class Args:
-    class metadata:
-        csv_path = 'data/metadata_64-residues.csv'
-        filter_num_ligand_atom = None
-        filter_num_protein_atom = None
-        filter_num_protein_aa = None
-        subset = None
-
-    epochs = 5000
-    lr = 3e-4
-    lr_min = 5e-6
-    warmup_steps = 3000
-    weight_decay = 0.01
-    clip_norm = 1.0
-    trn_batch_size = 64
-    val_batch_size = 64
-    num_worker = 0
-    logger_dir = 'logger'
-    ckpt_dir = 'genzyme_ckpt'
-    ckpt_from_pretrain = False
-    pretrain_ckpt_path = None
-    load_esm = True
-    ckpt_path = 'genzyme_ckpt/genzyme.ckpt'
-    gen_ckpt_path = None
-    inversefold_ckpt_path = None
-    inpainting_ckpt_path = None
-    early_stopping = 50
-    seed = 123
-    
-    ######
     #1 data arguments
-    min_t = 0
-    max_t = 1.
-    num_t = 100
-    max_len = 512
-    max_ot_res = 10
-    ######
+    pdb_name = 'Q8N4T8'
+    substrate_smiles = 'CC(=O)CC(=O)CC(=O)OC'
+    product_smiles = 'CC(=O)C[C@@H](CC(=O)OC)O'
+    
+    n_pocket_res = 64
+    n_protein_res = 300
+    min_t = 0.0
+    max_t = 1.0
+    num_pocket_design_t = 50
+    inpaint_pocket = True
+    
+    
+    # import args to load inpainting module
+    n_sample_enzyme = 8
+    inpaint_method = 'gibbs'
+    max_inpaint_t = 1.0
+    num_inpaint_t = 100
+    ptm_filter = 0.65
+    plddt_filter = 0.65
 
-    ######
+    
     #2 flow matcher arguments
-    ot_plan = True
+    ot_plan = False
     flow_trans = True
     flow_rot = True
-    ot_fn = 'exact'
-    ot_reg = 0.05
 
     # amino-acid flow
     flow_aa = True
-    aa_ot = False
     discrete_flow_type = 'masking'
     # msa flow
-    flow_msa = True
-    msa_ot = False
+    flow_msa = False
 
-    # ec flow
-    flow_ec = False
-    
     # alphafold loss
     use_aa = True
     use_fape = True
     use_plddt = True
-    use_pae = False
     use_tm = True
-    use_struct_violation = True
-
+    use_pae = False
+    use_struct_violation = False
+    
     class r3:
         min_b = 0.01
         min_sigma = 0.01
         max_b = 20.0
-        coordinate_scaling = .1 #dont scale coordinates
-        g=0.1
+        coordinate_scaling = 1. #dont scale coordinates
+        g = 0.1
 
     class so3:
         min_sigma = 0.01
@@ -76,12 +53,10 @@ class Args:
         axis_angle = True
         inference_scaling = 0.01
         g = 0.1
-    ######
 
-    
-    ######
     #3 model arguments
     guide_by_condition = True
+    pretrain_kd_pred = True
     num_aa_type = 20 #fixed
     num_atom_type = 95 #fixed
     node_embed_size = 256
@@ -93,6 +68,7 @@ class Args:
     bb_ligand_rbf_d_min = 0.5
     bb_ligand_rbf_d_max = 6.
 
+
     #4 MSA arguments
     class msa:
         num_msa = 1
@@ -103,12 +79,7 @@ class Args:
         msa_hidden_size = 128
         msa_embed_size = 32 #node_embed_size
 
-    class ec:
-        num_ec_class = 7 #fixed
-        ec_heads = 4
-        ec_embed_size = 32 #node_embed_size
         
-
     class mpnn:
         num_edge_type = 4
         dropout = 0.
@@ -131,11 +102,11 @@ class Args:
         num_lddt_bins = 50
         num_tm_bins = 64
         
-        
     class ipa:
         c_s = 256 #node_embed_size
         c_z = 128 #edge_embed_size
         c_hidden = 16
+        # c_skip = 16
         no_heads = 8
         no_qk_points = 8
         no_v_points = 12
@@ -143,8 +114,8 @@ class Args:
         seq_tfmr_num_layers = 4
         num_blocks = 20
         coordinate_scaling = .1 #r3.coordinate_scaling
-        
-        
+
+
     class inverse_folding:
         hidden_dim = 128 #node_embed_size
         node_features = 128
@@ -160,7 +131,6 @@ class Args:
         edge_angle = 1
         edge_direct = 1
         virtual_num = 3
-        
         
     class inpainting:
         noise_type = 'loglinear'
@@ -186,48 +156,12 @@ class Args:
         n_layers = 48
         pretrained=True
         freeze_codebook=True
-    ######
 
 
-    ######
-    #4 experiment arguments
-    class exp:
-        dist_loss_filter = 10.
-        aa_loss_weight = 0.1
-        msa_loss_weight = 0.1
-        ec_loss_weight = 1.0
-        violation_loss_weight = 0.6
-        plddt_loss_weight = 0.6
-        tm_loss_weight = 0.6
-        pae_loss_weight = 0.6
-        fape_loss_weight = 0.6
-        trans_loss_weight = 1.0
-        rot_loss_weight = 1.0
-        trans_x1_threshold = 1.0
-        coordinate_scaling = 0.1
-        bb_atom_loss_weight = 1.0
-        dist_mat_loss_weight = 1.0
-        aux_loss_weight = 0.2
-        aux_loss_t_filter = 0.4
-        bb_aux_loss_weight = 0.2
-    ######
-
-    
-    ######
     #5 evaluation arguments
     class eval:
-        noise_scale = 1.
-        dist_loss_filter = 6.
         sample_from_multinomial = False
         eval_dir = 'generated'
         record_extra = False
-        samples_per_eval_ec = 10
-        eval_freq = 1000
-        discrete_purity = False
-        discrete_temp = .1
-        aa_noise = 0.#20.
-        msa_noise = 0.#64.
-        ec_noise = 0.#6.
-        rot_sample_schedule = 'exp'
-        trans_sample_schedule = 'linear'
-    ######
+        discrete_purity = True
+        discrete_temp = 5.

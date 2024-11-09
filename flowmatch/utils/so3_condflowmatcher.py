@@ -1,4 +1,5 @@
 import torch
+from einops import rearrange
 from functorch import vmap
 from geomstats.geometry.special_orthogonal import SpecialOrthogonal
 
