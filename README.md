@@ -27,4 +27,6 @@ pip install einx
 pip install einops
 
 conda install conda-forge::pdbfixer
+
+For binding module, we use UniMol Docking v2
 ```
