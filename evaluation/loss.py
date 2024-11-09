@@ -11,6 +11,8 @@ from flowmatch.data import all_atom
 from flowmatch.utils.so3_helpers import hat_inv, pt_to_identity
 from flowmatch.utils.rigid_helpers import extract_trans_rots_mat
 
+from esm.utils.constants import esm3 as C
+
 def softmax_cross_entropy(logits, labels):
     loss = -1 * torch.sum(
         labels * torch.nn.functional.log_softmax(logits, dim=-1),
