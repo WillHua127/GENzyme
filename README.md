@@ -35,15 +35,15 @@ For binding module, we use UniMol Docking v2, you need to install [UniCore](http
 ## Model Inference
 1. ```gen_configs.py``` contain all inference configurations and hyperparameters. In ```gen_configs.py```, change ```args.pdb_name``` to one pdb file (set to None for de novo design ```args.pdb_name = None```), ```args.substrate_smiles``` to one substrate SMILES, and ```args.product_smiles``` to one product SMILES, to customize reaction.
 
-2. GENzyme inference script ```generate.py``` is provided. Run ```python generate.py```.
+2. GENzyme inference script ```generate.py``` is provided. Run ```python generate.py``` for de novo enzyme design.
 
-3. GENzyme reproduce script ```reproduce.py``` is provided. Run ```python reproduce.py```.
+3. GENzyme reproduce script ```reproduce.py``` is provided. Run ```python reproduce.py``` for reproduction.
 
 ## Model Training
 
 1. ```configs.py``` contain all training configurations and hyperparameters.
 
-2. Train model using ```train.py``` for single GPU training. Run ```python train.py```.
+2. Train model using ```train.py``` for single GPU training. Run ```python train.py``` for training.
 
    
 ## License
