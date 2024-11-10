@@ -22,6 +22,7 @@ pip install tmtools==0.2.0
 pip install geomstats==2.7.0
 pip install dm-tree==0.1.8
 pip install ml_collections==0.1.1
+pip install torchmetrics==0.11.4
 pip install OpenMM
 pip install einx
 pip install einops
