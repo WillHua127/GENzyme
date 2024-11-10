@@ -33,10 +33,11 @@ For binding module, we use UniMol Docking v2, you need to install [UniCore](http
 ## Model Weights
 
 ## Model Inference
+1. ```gen_configs.py``` contain all inference configurations and hyperparameters. In ```gen_configs.py```, change ```args.pdb_name``` to one pdb file (could be None ```args.pdb_name=None```), ```args.substrate_smiles``` to one substrate SMILES, and ```args.product_smiles``` to one product SMILES, to customize reaction.
 
-1. GENzyme inference script ```generate.py``` is provided. Change ```args.pdb_name``` ```args.substrate_smiles``` and ```args.product_smiles``` in ```gen_configs.py``` to customize reaction. Run ```python generate.py```.
+2. GENzyme inference script ```generate.py``` is provided. Run ```python generate.py```.
 
-2. GENzyme reproduce script ```reproduce.py``` is provided. Run ```python reproduce.py```.
+3. GENzyme reproduce script ```reproduce.py``` is provided. Run ```python reproduce.py```.
 
 ## Model Training
 
