@@ -2,8 +2,6 @@
 
 GENzyme enables de novo design of catalytic pockets, enzymes, and enzyme-substrate complexes for any reaction. Simply change ```args.substrate_smiles``` and  ```args.product_smiles``` in ```gen_configs.py``` to customized substrate SMILES and product SMILES, then run ```python generate.py```, you can design your own enzymes. 
 
-#### Please make sure you have [ESM3](https://github.com/evolutionaryscale/esm/tree/main) installed or have access to [ESM3](https://github.com/evolutionaryscale/esm/tree/main).
-
 ![genzyme](./image/genzyme.jpg)
 
 ![workflow](./image/workflow.jpg)
@@ -47,9 +45,10 @@ You should download GENzyme checkpoint at [Google drive](https://drive.google.co
 
 
 ## Notes before customized design
-#### To customize catalytic reaction, remeber to change the subsrtate SMILES and product SMILES in ```gen_configs.py```.
-#### You may also change ```args.ptm_filter``` and ```args.plddt_filter```  in ```gen_configs.py``` for filtering enzymes.
-#### GENzyme inference script ```generate.py``` is provided for your own design.
+#### 1. Please make sure you have [ESM3](https://github.com/evolutionaryscale/esm/tree/main) installed and have access to [ESM3](https://github.com/evolutionaryscale/esm/tree/main).
+#### 2. To customize catalytic reaction, remeber to change the subsrtate SMILES and product SMILES in ```gen_configs.py```.
+#### 3. You may also change ```args.ptm_filter``` and ```args.plddt_filter```  in ```gen_configs.py``` for filtering enzymes.
+#### 4. GENzyme inference script ```generate.py``` is provided for your own design.
 
 # Enzyme Refinement or Enzyme Repurposing
 1. ```gen_configs.py``` contain all inference configurations and hyperparameters.
