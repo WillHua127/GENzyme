@@ -35,7 +35,7 @@ pip install einops
 conda install conda-forge::pdbfixer
 ```
 
-In case if you want to use the pocket-specific binding module:
+In case if you want to use the pocket-specific binding module, which is not necessarily installed for enzyme design:
 ```
 For binding module, we use UniMol Docking v2, you need to install [UniCore](https://github.com/dptech-corp/Uni-Core)
 ```
