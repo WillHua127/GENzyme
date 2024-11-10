@@ -34,7 +34,9 @@ For binding module, we use UniMol Docking v2, you need to install [UniCore](http
 
 ## Model Inference
 
-GENzyme inference [demo](https://github.com/WillHua127/GENzyme/blob/main/generate.py) is provided. Change ```args.pdb_name``` ```args.substrate_smiles``` and ```args.product_smiles``` in ```gen_configs.py``` to customize reaction.
+1. GENzyme script [demo](https://github.com/WillHua127/GENzyme/blob/main/generate.py) is provided. Change ```args.pdb_name``` ```args.substrate_smiles``` and ```args.product_smiles``` in ```gen_configs.py``` to customize reaction.
+
+2. GENzyme script [reproduce](https://github.com/WillHua127/GENzyme/blob/main/reproduce.py) is provided. Run ```python reproduce.py```
 
 ## Model Training
 
