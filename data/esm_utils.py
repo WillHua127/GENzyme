@@ -11,15 +11,15 @@ import torch.nn.functional as F
 
 # import esm
 
-# from esm.models.vqvae import (
-#     StructureTokenDecoder,
-#     StructureTokenEncoder,
-# )
-# from esm.tokenization import StructureTokenizer
-# from esm.utils.decoding import decode_structure
-# from esm.utils import encoding, decoding, structure
-# from esm.models.esm3 import ESM3
-# from esm.sdk.api import ESMProtein, GenerationConfig
+from esm.models.vqvae import (
+    StructureTokenDecoder,
+    StructureTokenEncoder,
+)
+from esm.tokenization import StructureTokenizer
+from esm.utils.decoding import decode_structure
+from esm.utils import encoding, decoding, structure
+from esm.models.esm3 import ESM3
+from esm.sdk.api import ESMProtein, GenerationConfig
 
 
 SEQUENCE_VOCAB = [
