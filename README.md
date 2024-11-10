@@ -11,6 +11,7 @@ python>=3.11
 CUDA=12.1
 torch==2.4.1 (>=2.0.0)
 torch_geometric==2.4.0
+torch_scatter==2.1.2
 
 pip install mdtraj==1.10.0 (do first will install numpy, scipy as well, install later might raise dependency issues)
 pip install esm==3.0.7.post1
