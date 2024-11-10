@@ -33,9 +33,14 @@ pip install einx
 pip install einops
 
 conda install conda-forge::pdbfixer
+```
 
+In case if you want to use the pocket-specific binding module:
+```
 For binding module, we use UniMol Docking v2, you need to install [UniCore](https://github.com/dptech-corp/Uni-Core)
 ```
+
+
 ## Model Weights
 
 You should download GENzyme checkpoint at [Google drive](https://drive.google.com/file/d/1R39bvQwUKqIXeqf4RIsuK-K6RWq4P1gj/view?usp=sharing). Once you download it, put it under ```genzyme_ckpt``` folder, namely ```genzyme_ckpt/genzyme.ckpt```.
