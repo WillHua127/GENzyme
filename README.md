@@ -1,5 +1,9 @@
 # Reaction-conditioned De Novo Enzyme Design with GENzyme
 
+GENzyme enables de novo design of catalytic pockets, enzymes, and enzyme-substrate complexes for any reaction. Simply change ```args.substrate_smiles``` and  ```args.product_smiles``` to customized substrate SMILES and product SMILES in ```gen_configs.py```, then run ```python generate.py```, you can design your own enzymes. 
+
+#### Please make sure you have [ESM3](https://github.com/evolutionaryscale/esm/tree/main) installed or have access to [ESM3](https://github.com/evolutionaryscale/esm/tree/main).
+
 ![genzyme](./image/genzyme.jpg)
 
 ![workflow](./image/workflow.jpg)
