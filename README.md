@@ -37,7 +37,7 @@ You should download GENzyme checkpoint at [Google drive](https://drive.google.co
 ## Model Inference
 1. ```gen_configs.py``` contain all inference configurations and hyperparameters. In ```gen_configs.py```, change ```args.pdb_name``` to one pdb file (set to None for de novo design ```args.pdb_name = None```), ```args.substrate_smiles``` to one substrate SMILES, and ```args.product_smiles``` to one product SMILES, to customize reaction.
 
-2. GENzyme inference script ```generate.py``` is provided. Run ```python generate.py``` for de novo enzyme design.
+2. GENzyme inference script ```generate.py``` is provided. Run ```python generate.py``` for de novo enzyme design. To customize catalytic reaction, remeber to change the subsrtate SMILES and product SMILES in ```gen_configs.py```.
 
 3. GENzyme reproduce script ```reproduce.py``` is provided. Run ```python reproduce.py``` for reproduction.
 
