@@ -719,7 +719,7 @@ if __name__ == "__main__":
     
     args.eval.aa_temp = 0.1
     args.eval.aa_noise = 20.
-    parent_dir = os.path.join('fuck')
+    parent_dir = os.path.join('generated')
     os.makedirs(parent_dir, exist_ok=True)
 
     print('Starting sampling enzyme...')
