@@ -32,6 +32,8 @@ For binding module, we use UniMol Docking v2, you need to install [UniCore](http
 ```
 ## Model Weights
 
+You should download GENzyme checkpoint by [Google drive](https://drive.google.com/file/d/1GwrjGTg8aKSIZxKDQ4Dcyg0xPG3-ypvK/view?usp=sharing). Once you download it, put it under ```genzyme_ckpt``` folder, namely ```genzyme_ckpt/genzyme.ckpt```.
+
 ## Model Inference
 1. ```gen_configs.py``` contain all inference configurations and hyperparameters. In ```gen_configs.py```, change ```args.pdb_name``` to one pdb file (set to None for de novo design ```args.pdb_name = None```), ```args.substrate_smiles``` to one substrate SMILES, and ```args.product_smiles``` to one product SMILES, to customize reaction.
 
