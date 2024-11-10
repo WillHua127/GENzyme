@@ -77,4 +77,4 @@ You should download GENzyme checkpoint at [Google drive](https://drive.google.co
 
    
 ## License
-No Commercial use of either the model nor generated data, details to be found in license.md.
+No Commercial use of either the model nor generated data, details to be found in LICENSE.
