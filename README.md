@@ -42,7 +42,7 @@ For binding module, we use UniMol Docking v2, you need to install [UniCore](http
 
 1. ```configs.py``` contain all training configurations and hyperparameters.
 
-2. Train model using ```train_ddp.py``` for single GPU training. Run ```python train.py```.
+2. Train model using ```train.py``` for single GPU training. Run ```python train.py```.
 
    
 ## License
