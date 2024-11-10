@@ -35,7 +35,7 @@ pip install einops
 conda install conda-forge::pdbfixer
 ```
 
-In case if you want to use the pocket-specific binding module, which is not necessarily installed for enzyme design:
+#### In case if you want to use the pocket-specific binding module, which is not necessarily installed for enzyme design:
 ```
 For binding module, we use UniMol Docking v2, you need to install [UniCore](https://github.com/dptech-corp/Uni-Core)
 ```
@@ -45,12 +45,30 @@ For binding module, we use UniMol Docking v2, you need to install [UniCore](http
 
 You should download GENzyme checkpoint at [Google drive](https://drive.google.com/file/d/1R39bvQwUKqIXeqf4RIsuK-K6RWq4P1gj/view?usp=sharing). Once you download it, put it under ```genzyme_ckpt``` folder, namely ```genzyme_ckpt/genzyme.ckpt```.
 
-## Model Inference
-1. ```gen_configs.py``` contain all inference configurations and hyperparameters. In ```gen_configs.py```, change ```args.pdb_name``` to one pdb file (set to None for de novo design ```args.pdb_name = None```), ```args.substrate_smiles``` to one substrate SMILES, and ```args.product_smiles``` to one product SMILES, to customize reaction.
 
-2. GENzyme inference script ```generate.py``` is provided. Run ```python generate.py``` for de novo enzyme design. To customize catalytic reaction, remeber to change the subsrtate SMILES and product SMILES in ```gen_configs.py```.
+## Notes before customized design
+#### To customize catalytic reaction, remeber to change the subsrtate SMILES and product SMILES in ```gen_configs.py```.
+#### You may also change ```args.ptm_filter``` and ```args.plddt_filter```  in ```gen_configs.py``` for filtering enzymes.
+#### GENzyme inference script ```generate.py``` is provided for your own design.
 
-3. GENzyme reproduce script ```reproduce.py``` is provided. Run ```python reproduce.py``` for reproduction.
+# Enzyme Refinement or Enzyme Repurposing
+1. ```gen_configs.py``` contain all inference configurations and hyperparameters.
+2. Put your pocket pdb file under ```data/ground_truth/pocket/``` folder, put protein pdb file under ```data/ground_truth/protein/``` folder.
+3. In ```gen_configs.py```, change ```args.pdb_name``` to your pdb file name. Also change ```args.substrate_smiles``` to one substrate SMILES, and ```args.product_smiles``` to one product SMILES, to customize reaction.
+4. Run ```python generate.py``` for enzyme refinement and repurposing.
+5. Output pockets and enzymes are saved under ```generated/``` folder.
+
+
+# De novo Enzyme Design
+1. ```gen_configs.py``` contain all inference configurations and hyperparameters.
+2. In ```gen_configs.py```, change ```args.pdb_name``` to one pdb file (set to None for de novo design ```args.pdb_name = None```). Also change ```args.substrate_smiles``` to one substrate SMILES, and ```args.product_smiles``` to one product SMILES, to customize reaction.
+3. Run ```python generate.py``` for de novo enzyme design.
+4. Output pockets and enzymes are saved under ```generated/``` folder.
+
+
+## Reproduce Enzyme Design
+1. GENzyme reproduce script ```reproduce.py``` is provided.
+2. Run ```python reproduce.py``` for reproduction.
 
 ## Model Training
 
