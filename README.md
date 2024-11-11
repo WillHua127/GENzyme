@@ -48,25 +48,25 @@ You should download GENzyme checkpoint at [Google drive](https://drive.google.co
  1. Please make sure you have [ESM3](https://github.com/evolutionaryscale/esm/tree/main) installed and have access to [ESM3](https://github.com/evolutionaryscale/esm/tree/main).
  2. To customize catalytic reaction, remeber to change the subsrtate SMILES and product SMILES in [```gen_configs.py```](https://github.com/WillHua127/GENzyme/blob/main/gen_configs.py).
  3. You may also change ```args.ptm_filter``` and ```args.plddt_filter```  in ```gen_configs.py``` for filtering enzymes.
- 4. GENzyme inference script ```generate.py``` is provided for your own design.
+ 4. GENzyme inference script [```generate.py```](https://github.com/WillHua127/GENzyme/blob/main/generate.py) is provided for your own design.
 
 # Enzyme Refinement or Enzyme Repurposing
-1. ```gen_configs.py``` contain all inference configurations and hyperparameters.
-2. Put your pocket pdb file under ```data/ground_truth/pocket/``` folder, put protein pdb file under ```data/ground_truth/protein/``` folder.
+1. [```gen_configs.py```](https://github.com/WillHua127/GENzyme/blob/main/gen_configs.py) contain all inference configurations and hyperparameters.
+2. Put your pocket pdb file under [```data/ground_truth/pocket/```](https://github.com/WillHua127/GENzyme/tree/main/data/ground_truth/pocket) folder, put protein pdb file under [```data/ground_truth/protein/```](https://github.com/WillHua127/GENzyme/tree/main/data/ground_truth/protein) folder.
 3. In ```gen_configs.py```, change ```args.pdb_name``` to your pdb file name. Also change ```args.substrate_smiles``` to one substrate SMILES, and ```args.product_smiles``` to one product SMILES, to customize reaction.
 4. Run ```python generate.py``` for enzyme refinement and repurposing.
-5. Output pockets and enzymes are saved under ```generated/``` folder.
+5. Output pockets and enzymes are saved under [```generated/```](https://github.com/WillHua127/GENzyme/tree/main/generated) folder.
 
 
 # De novo Enzyme Design
-1. ```gen_configs.py``` contain all inference configurations and hyperparameters.
+1. [```gen_configs.py```](https://github.com/WillHua127/GENzyme/blob/main/gen_configs.py) contain all inference configurations and hyperparameters.
 2. In ```gen_configs.py```, change ```args.pdb_name``` to one pdb file (set to None for de novo design ```args.pdb_name = None```). Also change ```args.substrate_smiles``` to one substrate SMILES, and ```args.product_smiles``` to one product SMILES, to customize reaction.
 3. Run ```python generate.py``` for de novo enzyme design.
-4. Output pockets and enzymes are saved under ```generated/``` folder.
+4. Output pockets and enzymes are saved under [```generated/```](https://github.com/WillHua127/GENzyme/tree/main/generated) folder.
 
 
 ## Reproduce Enzyme Design
-1. GENzyme reproduce script ```reproduce.py``` is provided.
+1. GENzyme reproduce script [```reproduce.py```](https://github.com/WillHua127/GENzyme/blob/main/reproduce.py) is provided.
 2. Run ```python reproduce.py``` for reproduction.
 
 ## Model Training
