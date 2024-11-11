@@ -46,7 +46,7 @@ You should download GENzyme checkpoint at [Google drive](https://drive.google.co
 
 ## Notes before customized design
  1. Please make sure you have [ESM3](https://github.com/evolutionaryscale/esm/tree/main) installed and have access to [ESM3](https://github.com/evolutionaryscale/esm/tree/main).
- 2. To customize catalytic reaction, remeber to change the subsrtate SMILES and product SMILES in ```gen_configs.py```.
+ 2. To customize catalytic reaction, remeber to change the subsrtate SMILES and product SMILES in [```gen_configs.py```](https://github.com/WillHua127/GENzyme/blob/main/gen_configs.py).
  3. You may also change ```args.ptm_filter``` and ```args.plddt_filter```  in ```gen_configs.py``` for filtering enzymes.
  4. GENzyme inference script ```generate.py``` is provided for your own design.
 
