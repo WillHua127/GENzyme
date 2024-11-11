@@ -38,8 +38,7 @@ conda install conda-forge::pdbfixer
 For binding module, we use UniMol Docking v2, you need to install [UniCore](https://github.com/dptech-corp/Uni-Core)
 ```
 
-
-## Model Weights
+# Model Weights
 
 You should download GENzyme checkpoint at [Google drive](https://drive.google.com/file/d/1R39bvQwUKqIXeqf4RIsuK-K6RWq4P1gj/view?usp=sharing). Once you download it, put it under ```genzyme_ckpt``` folder, namely ```genzyme_ckpt/genzyme.ckpt```.
 
@@ -50,12 +49,29 @@ You should download GENzyme checkpoint at [Google drive](https://drive.google.co
  3. You may also change ```args.ptm_filter``` and ```args.plddt_filter```  in ```gen_configs.py``` for filtering enzymes.
  4. GENzyme inference script [```generate.py```](https://github.com/WillHua127/GENzyme/blob/main/generate.py) is provided for your own design.
 
+
+## Inference script configs
+```
+args.pdb_name             #Enzyme PDB file for refinement/repurposing, set None if no PDB file available
+args.substrate_smiles     #Input substrate SMILES
+args.product_smiles       #Input product SMILES
+args.n_pocket_res         #Number of catalytic pocket residues for design
+args.n_protein_res        #Number of enzyme residues for design
+args.num_pocket_design_t  #Number of inference steps (ODE steps for sampling)
+args.n_sample_enzyme      #Number of enzymes
+args.num_inpaint_t        #Number of pocket inpainting steps
+args.ptm_filter           #pTM filtering
+args.plddt_filter         #pLDDT filtering
+```
+
 # Enzyme Refinement or Enzyme Repurposing
 1. [```gen_configs.py```](https://github.com/WillHua127/GENzyme/blob/main/gen_configs.py) contain all inference configurations and hyperparameters.
 2. Put your pocket pdb file under [```data/ground_truth/pocket/```](https://github.com/WillHua127/GENzyme/tree/main/data/ground_truth/pocket) folder, put protein pdb file under [```data/ground_truth/protein/```](https://github.com/WillHua127/GENzyme/tree/main/data/ground_truth/protein) folder.
 3. In [```gen_configs.py```](https://github.com/WillHua127/GENzyme/blob/main/gen_configs.py), change ```args.pdb_name``` to your pdb file name. Also change ```args.substrate_smiles``` to one substrate SMILES, and ```args.product_smiles``` to one product SMILES, to customize reaction.
 4. Run ```python generate.py``` for enzyme refinement and repurposing.
 5. Output pockets and enzymes are saved under [```generated/```](https://github.com/WillHua127/GENzyme/tree/main/generated) folder.
+
+
 
 
 # De novo Enzyme Design
