@@ -5,7 +5,7 @@ class Args:
     product_smiles = 'CC(=O)C[C@@H](CC(=O)OC)O'
     
     n_pocket_res = 64
-    n_protein_res = 300
+    n_protein_res = 200
     min_t = 0.0
     max_t = 1.0
     num_pocket_design_t = 50
