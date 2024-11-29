@@ -96,3 +96,17 @@ args.plddt_filter         #pLDDT filtering
    
 ## License
 No Commercial use of either the model nor generated data, details to be found in LICENSE.
+
+
+## Citation
+```
+@misc{hua2024reactionconditionednovoenzymedesign,
+      title={Reaction-conditioned De Novo Enzyme Design with GENzyme}, 
+      author={Chenqing Hua and Jiarui Lu and Yong Liu and Odin Zhang and Jian Tang and Rex Ying and Wengong Jin and Guy Wolf and Doina Precup and Shuangjia Zheng},
+      year={2024},
+      eprint={2411.16694},
+      archivePrefix={arXiv},
+      primaryClass={q-bio.BM},
+      url={https://arxiv.org/abs/2411.16694}, 
+}
+```
