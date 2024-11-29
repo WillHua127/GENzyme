@@ -2,6 +2,8 @@
 
 GENzyme enables de novo design of catalytic pockets, enzymes, and enzyme-substrate complexes for any reaction. Simply change ```args.substrate_smiles``` and  ```args.product_smiles``` in ```gen_configs.py``` to customized substrate SMILES and product SMILES, then run ```python generate.py```, you can design your own enzymes. 
 
+####  EnzymeFlow Paper at [arxiv](https://arxiv.org/abs/2411.16694).
+
 ![genzyme](./image/genzyme.jpg)
 
 ![workflow](./image/workflow.jpg)
